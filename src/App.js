@@ -19,6 +19,8 @@ import Login from './components/Login/Login';
 import Inscription from './components/Inscription/Inscription';
 import ImageUpload from './components/ImageUpload/ImageUpload';
 import FilesUploadForm from './components/FilesUploadForm/FilesUploadForm';
+import MyBlog from './components/MyBlog/MyBlog';
+import BlogIndex from './components/BlogIndex/BlogIndex';
 
 // import styles from './app.module.css'
 
@@ -144,6 +146,10 @@ function App() {
         
         <Route path='/uploadimage' element={<ImageUpload />} />
         <Route path='/uploadimages' element={<FilesUploadForm />} />
+        
+        <Route path='/myblog' element={<MyBlog />} />
+        <Route path='/blog' element={<BlogIndex />} />
+
 
         <Route path='/*' element={<NotFound />} />
       </Routes>

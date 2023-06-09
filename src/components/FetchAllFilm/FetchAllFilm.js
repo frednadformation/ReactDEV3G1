@@ -40,6 +40,7 @@ function FetchAllFilm() {
 
   return (
     <div>
+    
     <Button animated>
       <Button.Content visible>Next</Button.Content>
       <Button.Content hidden>

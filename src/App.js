@@ -17,6 +17,8 @@ import NewFilm from './components/NewFilm/NewFilm';
 import UpdateFilm from './components/UpdateFilm/UpdateFilm';
 import Login from './components/Login/Login';
 import Inscription from './components/Inscription/Inscription';
+import ImageUpload from './components/ImageUpload/ImageUpload';
+import FilesUploadForm from './components/FilesUploadForm/FilesUploadForm';
 
 // import styles from './app.module.css'
 
@@ -139,6 +141,9 @@ function App() {
 
         <Route path='/login' element={<Login />} />
         <Route path='/inscription' element={<Inscription />} />
+        
+        <Route path='/uploadimage' element={<ImageUpload />} />
+        <Route path='/uploadimages' element={<FilesUploadForm />} />
 
         <Route path='/*' element={<NotFound />} />
       </Routes>

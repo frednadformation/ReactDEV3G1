@@ -1,0 +1,9 @@
+.borderRouge{
+    outline: none;
+    border: 2px solid red
+}
+
+.borderVert{
+    outline: none;
+    border: 2px solid green
+}

@@ -21,6 +21,7 @@ import ImageUpload from './components/ImageUpload/ImageUpload';
 import FilesUploadForm from './components/FilesUploadForm/FilesUploadForm';
 import MyBlog from './components/MyBlog/MyBlog';
 import BlogIndex from './components/BlogIndex/BlogIndex';
+import ChatApp from './components/ChatApp/ChatApp';
 
 // import styles from './app.module.css'
 
@@ -149,6 +150,8 @@ function App() {
         
         <Route path='/myblog' element={<MyBlog />} />
         <Route path='/blog' element={<BlogIndex />} />
+
+        <Route path='/chat' element={<ChatApp />} />
 
 
         <Route path='/*' element={<NotFound />} />

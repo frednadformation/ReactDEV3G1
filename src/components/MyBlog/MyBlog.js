@@ -1,16 +1,31 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 function MyBlog() {
     const [file, setFile] = useState(null);
     const [username, setUsername] = useState('');
     const [titre, setTitre] = useState('');
     const [imagename, setImagename] = useState('');
+    const [fileDataURL, setFileDataURL] = useState(null);
+    const navigate = useNavigate();
 
     const handleFileChange = (event) => {
-        setFile(event.target.files[0]);
+        
 
+        // console.log(event.target.result);
+        setFile(event.target.files[0]);
         setImagename(event.target.files[0].name)
+        
+        const fileReader = new FileReader();
+        fileReader.onload = (e) => {
+          const { result } = e.target;
+          if (result) {
+            setFileDataURL(result)
+          }
+        }
+        fileReader.readAsDataURL(file);
+
     };
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
@@ -31,6 +46,7 @@ function MyBlog() {
             axios.post('http://localhost:5000/submit-blog/', formData)
             .then(response =>{
                 console.log(response.data);
+                return navigate('/blog')
             })
             .catch(err =>{
                 console.log(err);
@@ -38,7 +54,6 @@ function MyBlog() {
         }
 
     };
-
 
   return (
     <form onSubmit={handleSubmit}>

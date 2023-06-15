@@ -3,6 +3,13 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { Button, Icon } from 'semantic-ui-react'
 
+import Cookies from 'js-cookie';
+
+import moment from 'moment/moment';
+import 'moment/locale/fr'
+
+moment().local('fr')
+
 
 function FetchAllFilm() {
     const initialState = {
@@ -31,6 +38,7 @@ function FetchAllFilm() {
   useEffect(() =>{
     axios.get('http://localhost:5000/allfilm')
     .then(response =>{
+      console.log(Cookies.get('access_token'));
       dispatch({type: 'FETCH_SUCCESS', payload: response.data});
     })
     .catch(error =>{
@@ -55,6 +63,7 @@ function FetchAllFilm() {
             <h3>{film.realisateur}</h3>
             <p>{film.genre}</p>
             <p>{film._id}</p>
+            <p>{moment(film.date_sortie).format('L')}</p>
             <Link to={`/updatefilm/${film._id}`}><button> Page Edit</button></Link>
 
           </React.Fragment>

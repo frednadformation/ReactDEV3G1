@@ -1,0 +1,40 @@
+.chat-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .messages-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .sent {
+    background-color: #e2f2ff;
+    text-align: right;
+  }
+  
+  .received {
+    background-color: #f7f7f7;
+    text-align: left;
+  }
+  
+  .input-container {
+    margin-top: 20px;
+  }
+  
+  .input-container input {
+    width: 70%;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .input-container button {
+    padding: 5px 10px;
+  }
